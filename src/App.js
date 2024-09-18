@@ -2,6 +2,8 @@ import React,{useState} from "react";
 import './App.css'
 import Tela from './componentes/tela';
 import Botao from './componentes/btn';
+//import Limpar from './componentes/limparTela';
+
   
 export default function App(){
 
@@ -23,6 +25,7 @@ export default function App(){
         setOperacao(false)
         return
       }
+      setResultado('');
       const valorDigitadoTela = valorTela + d
       setValorTela(valorDigitadoTela);
     }
@@ -44,11 +47,13 @@ export default function App(){
         return
       }
       try{ //calculo
-        const r =eval(valorTela)
+        const r = eval(valorTela)
         setAcumulador(r)
         setResultado(r)
         setOperacao(true)
+        setValorTela('')
       }catch{
+        setValorTela('')
         setResultado('ERRO')
       }
     }
@@ -56,10 +61,9 @@ export default function App(){
     return(
       <>
          <div className="cssContainer">
-            <h3 style={{textAlign:'center'}}>Calculadora Matematica Simples</h3>
             <Tela valor={valorTela} res={resultado}/>
             <div className="cssBotoes">
-              <Botao label={'AC'} onclick={limparMemoria}/>
+              <Botao label={'C'} onclick={() => limparMemoria()}/>
               <Botao label={'('} onclick={()=>addDigitoTela('(')}/>
               <Botao label={')'} onclick={()=>addDigitoTela(')')}/>
               <Botao label={'/'} onclick={()=>addDigitoTela('/')}/>
@@ -77,7 +81,7 @@ export default function App(){
               <Botao label={'+'} onclick={()=>addDigitoTela('+')}/>
               <Botao label={'0'} onclick={()=>addDigitoTela('0')}/>
               <Botao label={'.'} onclick={()=>addDigitoTela('.')}/>
-              <Botao label={'<-'} onclick={()=>Operacao('bs')}/>
+              <Botao label={'<'} onclick={()=>Operacao('bs')}/>
               <Botao label={'='} onclick={()=>Operacao('=')}/>
             </div>
          </div>

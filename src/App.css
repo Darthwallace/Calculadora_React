@@ -1,12 +1,14 @@
 .cssContainer{
     margin-top:200px;
-    margin: 0 auto;
+    margin-left: 750px;
     display:flex;
     justify-content:flex-start;
     align-items:center;
     flex-direction:column;
     width:300px;
-    border:2px solid #000;
+    border:4px solid #000;
+    border-radius: 3px;
+    border-style: groove;
 }
 
 .cssBotoes{
@@ -22,18 +24,60 @@
     align-items:flex-start;
     background-color:#444;
     flex-direction:column;
+    height: 70px;
     width:260px;
+    border:4px solid #000;
+    border-style: none;
 }
 
 .cssTelaOperacao{
-      font-size:25px;
+      font-size:50px;
       color:#fff;
-      height:20px;
 }
 
 .cssTelaResultado{
     font-size: 50px;
     color:#fff;
+}
+
+.cssBtn:first-child{
+    background-color: rgb(255, 8, 0);
+}
+
+.cssBtn:nth-child(20){
+    background-color: rgba(21, 255, 0, 0.938);
+}
+
+.cssBtn:nth-child(19){
+    background-color: rgba(255, 238, 0, 0.938);
+}
+
+.cssBtn:nth-child(18){
+    background-color: rgba(72, 27, 129, 0.938);
+}
+
+.cssBtn:nth-child(2){
+    background-color:rgba(0, 4, 255, 0.938);
+}
+
+.cssBtn:nth-child(3){
+    background-color: rgba(0, 4, 255, 0.938);
+}
+
+.cssBtn:nth-child(4){
+    background-color: rgba(0, 255, 213, 0.938);
+}
+
+.cssBtn:nth-child(8){
+    background-color: rgba(0, 255, 213, 0.938);
+}
+
+.cssBtn:nth-child(12){
+    background-color: rgba(0, 255, 213, 0.938);
+}
+
+.cssBtn:nth-child(16){
+    background-color: rgba(0, 255, 213, 0.938);
 }
 
 .cssBtn{
@@ -47,4 +91,3 @@
     text-align:center;
     outline:none;
 }
-
