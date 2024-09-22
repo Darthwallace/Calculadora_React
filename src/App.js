@@ -2,10 +2,10 @@ import React,{useState} from "react";
 import './App.css'
 import Tela from './componentes/tela';
 import Botao from './componentes/btn';
-//import Limpar from './componentes/limparTela';
+import Limpar from './componentes/limparTela';
 
   
-export default function App(){
+const App =() =>{
 
     const [valorTela,setValorTela] = useState('');
     const [resultado,setResultado] = useState(0);
@@ -28,14 +28,6 @@ export default function App(){
       setResultado('');
       const valorDigitadoTela = valorTela + d
       setValorTela(valorDigitadoTela);
-    }
-
-    const limparMemoria=()=>{
-      setOperacao(false)
-      setValorTela('')
-      setResultado(0)
-      setAcumulador(0)
-      return 
     }
 
     const Operacao= (open)=>{
@@ -63,9 +55,9 @@ export default function App(){
          <div className="cssContainer">
             <Tela valor={valorTela} res={resultado}/>
             <div className="cssBotoes">
-              <Botao label={'C'} onclick={() => limparMemoria()}/>
-              <Botao label={'('} onclick={()=>addDigitoTela('(')}/>
-              <Botao label={')'} onclick={()=>addDigitoTela(')')}/>
+              <Limpar setOperacao={setOperacao} setValorTela={setValorTela} setResultado={setResultado} setAcumulador={setAcumulador}/>
+              <Botao label={'<'} onclick={()=>Operacao('bs')}/>
+              <Botao label={'.'} onclick={()=>addDigitoTela('.')}/>
               <Botao label={'/'} onclick={()=>addDigitoTela('/')}/>
               <Botao label={'7'} onclick={()=>addDigitoTela('7')}/>
               <Botao label={'8'} onclick={()=>addDigitoTela('8')}/>
@@ -80,12 +72,14 @@ export default function App(){
               <Botao label={'3'} onclick={()=>addDigitoTela('3')}/>
               <Botao label={'+'} onclick={()=>addDigitoTela('+')}/>
               <Botao label={'0'} onclick={()=>addDigitoTela('0')}/>
-              <Botao label={'.'} onclick={()=>addDigitoTela('.')}/>
-              <Botao label={'<'} onclick={()=>Operacao('bs')}/>
+              <Botao label={'('} onclick={()=>addDigitoTela('(')}/>
+              <Botao label={')'} onclick={()=>addDigitoTela(')')}/>
               <Botao label={'='} onclick={()=>Operacao('=')}/>
             </div>
          </div>
       </>
   )
 }
+
+export default App;
 

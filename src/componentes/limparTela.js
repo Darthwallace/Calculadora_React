@@ -1,22 +1,18 @@
-import React,{useState} from 'react';
+import React from 'react'
+import Botao from './btn'
 
+const LimparTela = ({setOperacao,setValorTela,setResultado,setAcumulador}) => {
+    
+  const memoriaLimpa = () => {
+      setOperacao(false);
+      setValorTela('');
+      setResultado(0);
+      setAcumulador(0);
+    }
+      
+    return(
+      <Botao label={'C'} onclick={memoriaLimpa}/>
+    );
+};
 
-export default function LimparTela(props){
-  
-      const [valorTela,setValorTela] = useState('');
-      const [resultado,setResultado] = useState(0);
-      const [acumulador,setAcumulador] = useState(0);
-      const [operado,setOperacao] = useState(false);
-      return(
-        <>
-            {props.setOperacao}
-            {props.setValorTela}
-            {props.setResultado}
-            {props.setAcumulador}
-        </>
-      )
-      setOperacao(false)
-      setValorTela('')
-      setResultado(0)
-      setAcumulador(0)
-}
+export default LimparTela;
