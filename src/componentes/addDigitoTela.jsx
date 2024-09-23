@@ -1,25 +1,49 @@
-import {useState} from 'react'
+import React from 'react'
+import Botao from './btn'
 
-export default function AddDigitoTela(d){
+const AddDigitoTela = ({operado,setOperacao,resultado,setResultado,valorTela,setValorTela}) =>{
 
-    const [valorTela,setValorTela] = useState('');
-    const [resultado,setResultado] = useState(0);
-    const [acumulador,setAcumulador] = useState(0);
-    const [operado,setOperacao] = useState(false);
+  const digitoTela = (d) => {
 
     if((d === '+' || d === '-' || d === '*' || d ==='/') && operado){
         console.log('+-*/');
         setOperacao(false);
         setValorTela(resultado+d);
+        setResultado('');
         return 
       }
       if(operado){
+        setResultado('');
         setValorTela(d)
-        {setOperacao(false)
+        setOperacao(false)
         return 
       }
-      const valorDigitadoTela = valorTela + d
+      setResultado('');
+      const valorDigitadoTela = valorTela + d;
       setValorTela(valorDigitadoTela);
-  
       }
-    }
+
+      return(
+        <>
+          <Botao label={'('} onclick={()=> digitoTela('(')}/>
+          <Botao label={')'} onclick={()=> digitoTela(')')}/>
+          <Botao label={'*'} onclick={()=> digitoTela('*')}/>
+          <Botao label={'7'} onclick={()=> digitoTela('7')}/>
+          <Botao label={'8'} onclick={()=> digitoTela('8')}/>
+          <Botao label={'9'} onclick={()=> digitoTela('9')}/>
+          <Botao label={'-'} onclick={()=> digitoTela('-')}/>
+          <Botao label={'4'} onclick={()=> digitoTela('4')}/>
+          <Botao label={'5'} onclick={()=> digitoTela('5')}/>
+          <Botao label={'6'} onclick={()=> digitoTela('6')}/>
+          <Botao label={'+'} onclick={()=> digitoTela('+')}/>
+          <Botao label={'1'} onclick={()=> digitoTela('1')}/>
+          <Botao label={'2'} onclick={()=> digitoTela('2')}/>
+          <Botao label={'3'} onclick={()=> digitoTela('3')}/>
+          <Botao label={'/'} onclick={()=> digitoTela('/')}/>
+          <Botao label={'0'} onclick={()=> digitoTela('0')}/>
+          <Botao label={'.'} onclick={()=> digitoTela('.')}/>
+        </>
+      )
+    };
+
+    export default AddDigitoTela;
