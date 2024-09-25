@@ -22,6 +22,7 @@ const Operacao = ({valorTela,setValorTela,setOperacao,setAcumulador,setResultado
             setResultado('ERRO')
           }
         }
+
         return(
             <>
               <Botao label={'<'} onclick={()=>operacao('bs')}/>

@@ -5,6 +5,7 @@ import Limpar from './componentes/limparTela';
 import Operacao from './componentes/operacao';
 import AddDigitoTela from "./componentes/addDigitoTela";
 
+
 const App =() =>{
 
     const [valorTela,setValorTela] = useState('');

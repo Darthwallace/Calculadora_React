@@ -1,5 +1,6 @@
 import React from 'react'
 import Botao from './btn'
+import Sound from '../assets/Power Rangers completo.mp3'
 
 const AddDigitoTela = ({operado,setOperacao,resultado,setResultado,valorTela,setValorTela}) =>{
 
@@ -21,6 +22,15 @@ const AddDigitoTela = ({operado,setOperacao,resultado,setResultado,valorTela,set
       setResultado('');
       const valorDigitadoTela = valorTela + d;
       setValorTela(valorDigitadoTela);
+      }
+
+      function play(){
+        new Audio(Sound).play();
+      }
+
+      if(valorTela === '(123456)'){
+        alert('O resultado é (123456)');
+        play();
       }
 
       return(

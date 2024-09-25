@@ -24,7 +24,7 @@
     align-items:flex-start;
     background-color:#444;
     flex-direction:column;
-    height: 70px;
+    height: 80px;
     width:260px;
     border:4px solid #000;
     border-style: none;
@@ -47,7 +47,6 @@
 .cssBtn:nth-child(20){
     background-color: rgba(16, 151, 4, 0.938);
 }
-
 
 .cssBtn:nth-child(2){
     background-color:rgba(16, 167, 212, 0.938);
