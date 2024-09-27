@@ -1,6 +1,7 @@
 import React from 'react'
 import Botao from './btn'
 import Sound from '../assets/Power Rangers completo.mp3'
+import Video from '../assets/PRB.mp4'
 
 const AddDigitoTela = ({operado,setOperacao,resultado,setResultado,valorTela,setValorTela}) =>{
 
@@ -24,12 +25,21 @@ const AddDigitoTela = ({operado,setOperacao,resultado,setResultado,valorTela,set
       setValorTela(valorDigitadoTela);
       }
 
+      function video(){
+        return(
+          <div>
+            <video width="750" height="500" controls>
+              <source src={Video} type='video/mp4'></source>
+            </video>
+          </div>
+        )
+      }
+
       function play(){
         new Audio(Sound).play();
       }
 
       if(valorTela === '(123456)'){
-        alert('O resultado é (123456)');
         play();
       }
 
@@ -55,5 +65,7 @@ const AddDigitoTela = ({operado,setOperacao,resultado,setResultado,valorTela,set
         </>
       )
     };
+
+    
 
     export default AddDigitoTela;
