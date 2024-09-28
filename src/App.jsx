@@ -4,6 +4,7 @@ import Tela from './componentes/tela';
 import Limpar from './componentes/limparTela';
 import Operacao from './componentes/operacao';
 import AddDigitoTela from "./componentes/addDigitoTela";
+import Video from './assets/PRB.mp4'
 
 
 const App =() =>{
@@ -15,7 +16,10 @@ const App =() =>{
 
     return(
       <>
-         <div className="cssContainer">
+          <video id="video" width="750" height="500" controls>
+            <source src={Video} type='video/mp4'></source>
+          </video>
+         <div id="calc" className="cssContainer">
             <Tela valor={valorTela} res={resultado}/>
             <div className="cssBotoes">
               <Limpar setOperacao={setOperacao} setValorTela={setValorTela} setResultado={setResultado} setAcumulador={setAcumulador}/> 

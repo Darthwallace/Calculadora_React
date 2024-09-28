@@ -1,13 +1,14 @@
 import React from 'react'
 import Botao from './btn'
 import Sound from '../assets/Power Rangers completo.mp3'
-import Video from '../assets/PRB.mp4'
+import Zuada from '../assets/Som botao.mp3'
+
 
 const AddDigitoTela = ({operado,setOperacao,resultado,setResultado,valorTela,setValorTela}) =>{
 
   const digitoTela = (d) => {
-
     if((d === '+' || d === '-' || d === '*' || d ==='/') && operado){
+        Som();
         console.log('+-*/');
         setOperacao(false);
         setValorTela(resultado+d);
@@ -15,34 +16,44 @@ const AddDigitoTela = ({operado,setOperacao,resultado,setResultado,valorTela,set
         return 
       }
       if(operado){
+        Som();
         setResultado('');
         setValorTela(d)
         setOperacao(false)
         return 
       }
+      Som();
       setResultado('');
       const valorDigitadoTela = valorTela + d;
       setValorTela(valorDigitadoTela);
       }
 
-      function video(){
-        return(
-          <div>
-            <video width="750" height="500" controls>
-              <source src={Video} type='video/mp4'></source>
-            </video>
-          </div>
-        )
+      if(valorTela.length > 10){
+        setValorTela('');
       }
 
       function play(){
         new Audio(Sound).play();
       }
 
-      if(valorTela === '(123456)'){
-        play();
+      function Som(){
+        new Audio(Zuada).play()
       }
 
+      if(valorTela === '(123456)'){
+        play();
+        mostrarVideo()
+      }
+
+      function mostrarVideo(){
+        var video = document.getElementById("video");
+        var calc = document.getElementById("calc");
+        setTimeout(()=>{
+          calc.style.display = "none";
+          video.style.display = "block";
+        },"3000")
+      }
+  
       return(
         <>
           <Botao label={'('} onclick={()=> digitoTela('(')}/>
@@ -65,7 +76,5 @@ const AddDigitoTela = ({operado,setOperacao,resultado,setResultado,valorTela,set
         </>
       )
     };
-
-    
-
-    export default AddDigitoTela;
+ 
+export default AddDigitoTela;
