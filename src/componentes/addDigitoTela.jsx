@@ -48,9 +48,11 @@ const AddDigitoTela = ({operado,setOperacao,resultado,setResultado,valorTela,set
       function mostrarVideo(){
         var video = document.getElementById("video");
         var calc = document.getElementById("calc");
+        var corpo = document.getElementById("corpo");
         setTimeout(()=>{
           calc.style.display = "none";
           video.style.display = "block";
+          corpo.style.backgroundColor = "red";
         },"3000")
       }
   
