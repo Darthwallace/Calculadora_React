@@ -20,5 +20,5 @@ jobs:
       - name: Deploy to calculadora
         uses: peaceiris/actions-calculadora@v3
         with:
-          github_token: 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
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
