@@ -5,7 +5,7 @@ import Limpar from './componentes/limparTela';
 import Operacao from './componentes/operacao';
 import AddDigitoTela from "./componentes/addDigitoTela";
 import Video from './assets/PRB.mp4'
-import '@testing-library/jest-dom'
+
 
 
 
