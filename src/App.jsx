@@ -5,8 +5,8 @@ import Limpar from './componentes/limparTela';
 import Operacao from './componentes/operacao';
 import AddDigitoTela from "./componentes/addDigitoTela";
 import Video from './assets/PRB.mp4'
-import "@testing-library/jest-dom/extend-expect";
-export * from "@testing-library/react";
+import '@testing-library/jest-dom'
+
 
 
 const App =() =>{
