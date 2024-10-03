@@ -17,8 +17,8 @@ jobs:
         run: |
           npm ci
           npm run build
-      - name: Deploy to calculadora-react
-        uses: peaceiris/actions-calculadora-react@v3
+      - name: Deploy to react-calculadora
+        uses: peaceiris/actions-react-calculadora@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
